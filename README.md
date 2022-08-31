@@ -4,7 +4,7 @@ https://e-chart-jai-singh.netlify.app/
 
 # Bar Chart diagram
 
-![Bar Chart diagram](./public/images/bar.png)
+![Bar Chart diagram](./public/images/barChart.png)
 
 # Scatter diagram
 
