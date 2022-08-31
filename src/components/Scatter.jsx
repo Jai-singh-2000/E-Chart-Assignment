@@ -30,9 +30,6 @@ const Scatter=()=>{
     },[])
 
     option = {
-        title:{
-            text:"HGii"
-        },
         xAxis: {name:"Color Intensity"},
         yAxis: {name:"Hue"},
         series: [
