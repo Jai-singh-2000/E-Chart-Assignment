@@ -8,18 +8,20 @@ const Scatter=()=>{
     const [data,setData]=useState([]);
 
     const fetchScatterData=(Wine)=>{
-        let color=Wine.map((item)=>{
+
+        let colorArr=Wine.map((item)=>{
             return Number(item["Color intensity"]);
         })
 
-        let hue=Wine.map((item)=>{
+        let hueArr=Wine.map((item)=>{
             return item["Hue"];
         })
         
+        //Make new merge array with both elements [ [1,2], [2,3] ]
         let mergeArr=[];
         for(let index in Wine)
         {
-            mergeArr.push([color[index],hue[index]]);
+            mergeArr.push([colorArr[index],hueArr[index]]);
         }
 
         setData(mergeArr);

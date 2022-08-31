@@ -9,17 +9,39 @@ const BarChart=()=>{
   const [alcohol,setAlcohol]=useState([]);
 
   const fetchBarData=(Wine)=>{
-   
-    let malicAcidArr=Wine.map((item)=>{
-      return item["Malic Acid"];
-    })
-    setMalicAcid(malicAcidArr);
 
+    //Get array of alcohol value
     let alcoholArr=Wine.map((item)=>{
       return item.Alcohol;
     })
-    setAlcohol(alcoholArr);
-  
+    
+    //This array give all unique Alcohol values [1,2,3] 
+    let uniqueArr=[...new Set(alcoholArr)]; 
+    setAlcohol(uniqueArr);
+ 
+
+    let malic=[];
+
+    for(let index in uniqueArr)
+    {
+      //Filter array of Object of Alcohol value 1, 2, 3
+      let filteredArrOfObj=Wine.filter((item)=>{
+        return item.Alcohol===uniqueArr[index]; 
+      })
+
+      //From those filterArrOfObj, make array with malic acid 
+      let filteredMalicArr=filteredArrOfObj.map((item)=>{
+        return item["Malic Acid"];
+      })
+
+      const average = filteredMalicArr.reduce((a, b) => a + b, 0) / filteredMalicArr.length;
+      malic.push(average);
+    
+    }
+
+    //malic = [13.74, 12.27, 13.15]
+    setMalicAcid(malic);
+
   }
 
   useEffect(()=>{
