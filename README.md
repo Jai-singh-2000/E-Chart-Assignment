@@ -1,6 +1,6 @@
 # E-chart Website
 
-https://e-chart-jai-singh.netlify.app/
+https://charts-jai.netlify.app/
 
 # Bar Chart diagram
 
